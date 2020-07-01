@@ -28,7 +28,7 @@ import { send } from 'process';
   // RETURNS
   //   the filtered image file [!!TIP res.sendFile(filteredpath); might be useful]
   /**************************************************************************** */
-app.get("/filteredimage", async (req, res) => {
+app.get("/filteredimage", async (req: Request, res: Response) => {
   let{ image_url } = req.query;
   //1.validate the image_url query
   if(!image_url)
