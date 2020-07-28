@@ -4,10 +4,8 @@ import { sequelize } from './sequelize';
 import { IndexRouter } from './controllers/v0/index.router';
 
 import bodyParser from 'body-parser';
-import { config } from './config/config';
-import { V0MODELS } from './controllers/v0/model.index';
 
-const c = config.dev;
+import { V0MODELS } from './controllers/v0/model.index';
 
 (async () => {
   await sequelize.addModels(V0MODELS);
@@ -20,8 +18,8 @@ const c = config.dev;
 
   //CORS Should be restricted
   app.use(function(req, res, next) {
-  //res.header("Access-Control-Allow-Origin", c.url);
-    res.header("Access-Control-Allow-Origin", "*");
+    //res.header("Access-Control-Allow-Origin", "http://localhost:8100"); //works better for localhost alone
+	res.header("Access-Control-Allow-Origin", "*");//works online as well
     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
     next();
   });
@@ -36,7 +34,7 @@ const c = config.dev;
 
   // Start the Server
   app.listen( port, () => {
-      console.log( `server running ` + c.url );
+      console.log( `server running http://localhost:${ port }` );
       console.log( `press CTRL+C to stop server` );
   } );
 })();

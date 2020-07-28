@@ -1,13 +1,14 @@
 apiVersion: v1
 kind: ConfigMap
 data:
-  AWS_BUCKET: ___INSERT_AWS_BUCKET___
-  AWS_PROFILE: ___INSERT_AWS_PROFILE___
-  AWS_REGION: ___INSERT_AWS_REGION___
-  JWT_SECRET: ___INSERT_JWT_SECRET___
-  POSTGRESS_DB: ___INSERT_POSTGRESS_DB___
-  POSTGRESS_HOST: ___INSERT_POSTGRESS_HOST___
-  URL: http://localhost:8100  
+  AWS_BUCKET: udagram-komi-dev
+  AWS_PROFILE: default
+  AWS_REGION: us-east-2
+  JWT_SECRET: azerty
+  POSTGRESS_DB: udagramkomidev
+  POSTGRESS_HOST: udagramkomidev.ceace7zxoczq.us-east-2.rds.amazonaws.com
+  #  URL: http://a2549494729394839b422423ba38644d-1058792609.us-east-2.elb.amazonaws.com:8100
+  URL: http://localhost:8081
 metadata:
   name: env-config
-  
+ 
